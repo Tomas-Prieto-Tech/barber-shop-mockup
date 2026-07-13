@@ -1,0 +1,127 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              }
+            ]
+          }
+        ],
+        "description": "The barber's name as it appears on the website.",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 2
+              }
+            ]
+          }
+        ],
+        "description": "Short title shown above the barber's name.",
+        "name": "role",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Upload the headshot or portrait used on the team section.",
+        "name": "image",
+        "type": "image",
+        "title": "Profile Image"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 20
+              },
+              {
+                "flag": "max",
+                "constraint": 320
+              }
+            ]
+          }
+        ],
+        "description": "A short introduction to help clients get to know this barber.",
+        "name": "bio",
+        "type": "text"
+      },
+      {
+        "description": "Add a few specialties or signature services, one per item.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "specialties",
+        "type": "array"
+      },
+      {
+        "initialValue": 0,
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ]
+          }
+        ],
+        "description": "Lower numbers appear first on the site.",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "initialValue": true,
+        "description": "Turn this off to hide a barber without deleting the document.",
+        "name": "isPublished",
+        "type": "boolean",
+        "title": "Show on Website"
+      }
+    ],
+    "name": "barber",
+    "type": "document"
+  }
+]

@@ -22,7 +22,7 @@ export const barberType = defineType({
       title: "Role",
       type: "string",
       group: "profile",
-      description: "Short title shown under the barber's name.",
+      description: "Short title shown above the barber's name.",
       validation: (rule) => rule.required().min(2),
     }),
     defineField({

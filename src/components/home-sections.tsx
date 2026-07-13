@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MapLinkChooser } from "@/components/map-link-chooser";
 import { SectionHeading } from "@/components/section-heading";
 import {
   businessInfo,
@@ -13,7 +14,7 @@ import { getBarbers } from "@/lib/barbers";
 
 export function HeroSection() {
   return (
-    <section className="page-shell overflow-hidden px-6 pb-14 pt-10 sm:px-10 sm:pb-18 sm:pt-16">
+    <section className="page-shell overflow-x-hidden px-6 pb-14 pt-10 sm:px-10 sm:pb-18 sm:pt-16">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="space-y-7">
           <div className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs uppercase tracking-[0.28em] text-[var(--color-mist)]">
@@ -39,14 +40,7 @@ export function HeroSection() {
             >
               Book an Appointment
             </Link>
-            <a
-              href={businessInfo.mapUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.22em] text-[var(--color-paper)] transition hover:border-[var(--color-accent-blue)]"
-            >
-              View on Google Maps
-            </a>
+            <MapLinkChooser links={businessInfo.mapLinks} variant="button" />
           </div>
         </div>
         <div className="relative">
@@ -361,14 +355,7 @@ export function HoursAndLocation() {
               >
                 {businessInfo.phone}
               </a>
-              <a
-                href={businessInfo.mapUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex text-sm uppercase tracking-[0.22em] text-[var(--color-paper)] underline decoration-[var(--color-accent-blue)] underline-offset-6"
-              >
-                Open in Google Maps
-              </a>
+              <MapLinkChooser links={businessInfo.mapLinks} className="mt-4" />
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-accent-blue)]">

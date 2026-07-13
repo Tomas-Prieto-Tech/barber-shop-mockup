@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MapLinkChooser } from "@/components/map-link-chooser";
 import { businessInfo, navLinks } from "@/data/site";
 
 export function SiteFooter() {
@@ -38,9 +39,7 @@ export function SiteFooter() {
           </a>
           <a href={`mailto:${businessInfo.email}`}>{businessInfo.email}</a>
           <div className="flex gap-5 uppercase tracking-[0.2em]">
-            <a href={businessInfo.mapUrl} target="_blank" rel="noreferrer">
-              Google Maps
-            </a>
+            <MapLinkChooser links={businessInfo.mapLinks} />
             <a href={businessInfo.instagramUrl} target="_blank" rel="noreferrer">
               Instagram
             </a>

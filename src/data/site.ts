@@ -5,13 +5,26 @@ export const navLinks = [
   { href: "/book", label: "Book" },
 ];
 
+const businessAddress = "1801 19th Street, Bakersfield, CA 93301";
+const encodedBusinessAddress = encodeURIComponent(businessAddress);
+
+export type MapLinks = {
+  google: string;
+  apple: string;
+  waze: string;
+};
+
 export const businessInfo = {
-  address: "1801 19th Street, Bakersfield, CA 93301",
+  address: businessAddress,
   phone: "(661) 555-0146",
   email: "hello@thestandardbarbershop.com",
   // Replace this with the shop's real Booksy booking URL.
   booksyUrl: "https://booksy.com/",
-  mapUrl: "https://maps.google.com/?q=1801+19th+Street+Bakersfield+CA+93301",
+  mapLinks: {
+    google: `https://www.google.com/maps/search/?api=1&query=${encodedBusinessAddress}`,
+    apple: `https://maps.apple.com/?q=${encodedBusinessAddress}`,
+    waze: `https://www.waze.com/ul?q=${encodedBusinessAddress}&navigate=yes`,
+  } satisfies MapLinks,
   instagramUrl: "https://www.instagram.com/thestandardbarbershop",
   hoursSummary: "Monday to Friday, 9 AM to 7 PM. Saturday, 9 AM to 5 PM. Sunday by appointment.",
   hours: [
