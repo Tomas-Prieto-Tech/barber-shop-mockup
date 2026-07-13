@@ -94,3 +94,17 @@ select option {
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 80%);
   content: "";
 }
+
+.sticky-booking-button {
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms ease;
+}
+
+body[data-map-modal-open="true"] .sticky-booking-button {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  visibility: hidden;
+}

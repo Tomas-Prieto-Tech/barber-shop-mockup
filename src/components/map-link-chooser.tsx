@@ -80,8 +80,10 @@ export function MapLinkChooser({
     document.addEventListener("keydown", handleDocumentKeyDown);
 
     const originalOverflow = document.body.style.overflow;
+    const originalMapModalState = document.body.dataset.mapModalOpen;
     const triggerElement = triggerRef.current;
     document.body.style.overflow = "hidden";
+    document.body.dataset.mapModalOpen = "true";
 
     const focusTarget =
       dialogRef.current?.querySelector<HTMLElement>(
@@ -93,6 +95,11 @@ export function MapLinkChooser({
     return () => {
       document.removeEventListener("keydown", handleDocumentKeyDown);
       document.body.style.overflow = originalOverflow;
+      if (originalMapModalState === undefined) {
+        delete document.body.dataset.mapModalOpen;
+      } else {
+        document.body.dataset.mapModalOpen = originalMapModalState;
+      }
       triggerElement?.focus();
     };
   }, [open]);
@@ -116,7 +123,7 @@ export function MapLinkChooser({
         {label}
       </button>
       {open ? (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/65 px-4 pb-4 pt-8 backdrop-blur-sm sm:items-center sm:p-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 p-4 backdrop-blur-sm sm:p-6">
           <button
             type="button"
             aria-label="Close maps picker"
