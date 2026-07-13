@@ -16,7 +16,7 @@ export function PageBanner({
           <p className="text-sm uppercase tracking-[0.35em] text-[var(--color-accent-blue)]">
             {eyebrow}
           </p>
-          <h1 className="max-w-4xl font-display text-6xl uppercase leading-[0.9] tracking-[0.08em] text-[var(--color-paper)] sm:text-7xl">
+          <h1 className="max-w-4xl break-words font-display text-5xl uppercase leading-[0.9] tracking-[0.05em] text-[var(--color-paper)] sm:text-7xl sm:tracking-[0.08em]">
             {title}
           </h1>
         </div>
