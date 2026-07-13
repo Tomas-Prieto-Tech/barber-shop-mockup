@@ -4,9 +4,8 @@
 
 1. Install dependencies with `npm install`.
 2. Copy `.env.example` to `.env.local`.
-3. Fill in both the site env vars and the Studio env vars:
-   `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`,
-   `SANITY_STUDIO_PROJECT_ID`, and `SANITY_STUDIO_DATASET`.
+3. Fill in the Sanity project vars:
+   `SANITY_STUDIO_PROJECT_ID` and `SANITY_STUDIO_DATASET`.
 4. Add `SANITY_READ_TOKEN` only if your dataset is private.
 5. Run `npm run dev` and open `http://localhost:3000`.
 
@@ -34,15 +33,23 @@ The Studio reads only:
 
 The website reads:
 
-- `NEXT_PUBLIC_SANITY_PROJECT_ID`
-- `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_STUDIO_PROJECT_ID`
+- `SANITY_STUDIO_DATASET`
+- `SANITY_API_VERSION`
+- `SANITY_BARBERS_REVALIDATE_SECONDS`
 - `SANITY_READ_TOKEN` when the dataset is private
 
 The seed command requires:
 
-- `NEXT_PUBLIC_SANITY_PROJECT_ID`
-- `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_STUDIO_PROJECT_ID`
+- `SANITY_STUDIO_DATASET`
 - `SANITY_WRITE_TOKEN`
+- `SANITY_API_VERSION` optionally
+
+Notes:
+
+- `SANITY_STUDIO_PROJECT_ID` and `SANITY_STUDIO_DATASET` currently power both the website and the Studio.
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` are not used by the current codebase.
 
 ## Content Model
 

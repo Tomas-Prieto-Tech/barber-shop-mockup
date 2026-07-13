@@ -14,7 +14,7 @@ const apiVersion = process.env.SANITY_API_VERSION?.trim() || "2025-01-01";
 
 if (!projectId || !dataset || !token) {
   throw new Error(
-    "Missing Sanity configuration. Set NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, and SANITY_WRITE_TOKEN before seeding.",
+    "Missing Sanity configuration. Set SANITY_STUDIO_PROJECT_ID, SANITY_STUDIO_DATASET, and SANITY_WRITE_TOKEN before seeding.",
   );
 }
 
