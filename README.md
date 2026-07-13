@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Standard Barbershop
 
-## Getting Started
+## Local Setup
 
-First, run the development server:
+1. Install dependencies with `npm install`.
+2. Copy `.env.example` to `.env.local`.
+3. Fill in both the site env vars and the Studio env vars:
+   `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`,
+   `SANITY_STUDIO_PROJECT_ID`, and `SANITY_STUDIO_DATASET`.
+4. Add `SANITY_READ_TOKEN` only if your dataset is private.
+5. Run `npm run dev` and open `http://localhost:3000`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+If the Sanity variables are missing locally, the site falls back to the seeded barber data in [src/data/site.ts](/Users/tomasprieto/Desktop/barber-shop-mockup/src/data/site.ts).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sanity CMS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The homepage barber grid now reads from Sanity and revalidates on the interval set by `SANITY_BARBERS_REVALIDATE_SECONDS` (default `300` seconds).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The Sanity schema lives in:
 
-## Learn More
+- [sanity.config.ts](/Users/tomasprieto/Desktop/barber-shop-mockup/sanity.config.ts)
+- [sanity/schemaTypes/barber.ts](/Users/tomasprieto/Desktop/barber-shop-mockup/sanity/schemaTypes/barber.ts)
 
-To learn more about Next.js, take a look at the following resources:
+Useful commands:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run sanity:dev` starts the Sanity Studio locally.
+- `npm run sanity:seed-barbers` uploads the current three barber images and creates or replaces the matching documents.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The Studio reads only:
 
-## Deploy on Vercel
+- `SANITY_STUDIO_PROJECT_ID`
+- `SANITY_STUDIO_DATASET`
+- `SANITY_STUDIO_PROJECT_TITLE`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The website reads:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`
+- `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_READ_TOKEN` when the dataset is private
+
+The seed command requires:
+
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`
+- `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_WRITE_TOKEN`
+
+## Content Model
+
+`barber` documents include:
+
+- `name`
+- `role`
+- `bio`
+- `specialties[]`
+- `image`
+- `displayOrder`
+- `isPublished`

@@ -1,0 +1,37 @@
+<svg width="1400" height="1600" viewBox="0 0 1400 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1600" fill="#111315"/>
+  <rect width="1400" height="1600" fill="url(#bg)"/>
+  <circle cx="1150" cy="280" r="260" fill="#8AA6B8" fill-opacity="0.16"/>
+  <circle cx="220" cy="1320" r="250" fill="#B55242" fill-opacity="0.14"/>
+  <rect x="130" y="150" width="1140" height="1300" rx="48" fill="url(#frame)" stroke="rgba(255,255,255,0.15)"/>
+  <rect x="215" y="230" width="970" height="1140" rx="32" fill="#161A1D"/>
+  <path d="M466 1240C560 1016 696 868 858 718C955 628 1094 526 1185 468V1298H466V1240Z" fill="#24292E"/>
+  <path d="M770 482C837 482 900 518 937 576L1010 692L960 1164H575L527 704L600 578C638 519 702 482 770 482Z" fill="#20252A"/>
+  <path d="M660 534C660 461 719 402 792 402C865 402 924 461 924 534V616H660V534Z" fill="#0C0E10"/>
+  <path d="M643 621H940L976 1164H604L643 621Z" fill="#12171A"/>
+  <path d="M722 639C782 662 853 662 913 639L928 818C933 887 885 946 816 953L797 955C728 962 669 911 664 842L653 640L722 639Z" fill="#F0E3D7"/>
+  <path d="M717 623C775 646 857 645 915 621L928 684C934 710 920 737 895 747C840 769 792 777 736 763C686 750 650 705 658 654L717 623Z" fill="#D8C0A7"/>
+  <path d="M693 515C717 446 786 415 849 438C886 452 917 480 938 522L954 554L924 620C869 644 774 650 702 626L666 569L693 515Z" fill="#0B0D0F"/>
+  <path d="M624 713C634 699 656 700 665 715L716 795C729 816 716 844 691 844H592C567 844 553 816 567 795L624 713Z" fill="#8AA6B8" fill-opacity="0.6"/>
+  <rect x="245" y="940" width="294" height="286" rx="26" fill="#15191C" stroke="rgba(255,255,255,0.1)"/>
+  <rect x="285" y="980" width="214" height="8" rx="4" fill="#8AA6B8" fill-opacity="0.8"/>
+  <rect x="285" y="1016" width="146" height="8" rx="4" fill="#F5F0E8" fill-opacity="0.7"/>
+  <rect x="285" y="1044" width="178" height="8" rx="4" fill="#F5F0E8" fill-opacity="0.4"/>
+  <rect x="285" y="1110" width="86" height="86" rx="43" fill="#B55242" fill-opacity="0.7"/>
+  <path d="M1106 261H1179V1169H1050V317L1106 261Z" fill="#191E21"/>
+  <rect x="260" y="260" width="278" height="432" rx="18" fill="url(#mirror)"/>
+  <defs>
+    <linearGradient id="bg" x1="1320" y1="32" x2="142" y2="1518" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D2328"/>
+      <stop offset="1" stop-color="#0D0F11"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="130" y1="150" x2="1270" y2="1450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#252A2F"/>
+      <stop offset="1" stop-color="#0E1012"/>
+    </linearGradient>
+    <linearGradient id="mirror" x1="399" y1="260" x2="399" y2="692" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#273239"/>
+      <stop offset="1" stop-color="#13171A"/>
+    </linearGradient>
+  </defs>
+</svg>
